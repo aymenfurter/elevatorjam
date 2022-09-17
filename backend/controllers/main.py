@@ -32,8 +32,8 @@ async def enters(userId: str, elevatorId: str):
 @route.get("/song/")
 async def get_song_for(elevatorId: str):
     try:
-        elevator = [elevator for elevator in state.elevators if elevator.elevatorId == elevatorId].pop(0)
-        userId = elevator.users.pop(0)
+        elevator = [elevator for elevator in state.elevators if elevator.elevatorId == elevatorId][0]
+        userId = elevator.users[0]
         user = copy.deepcopy([user for user in state.users if user.uid == userId][0])
         song = random.sample(user.songs, k=1)
     except Exception as e:
