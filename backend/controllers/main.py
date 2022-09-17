@@ -38,7 +38,7 @@ async def get_song_for(elevatorId: str):
     return song
 
 async def get_file(filename: str):
-    path = best_match(filename, list_files())
+    path = best_match(filename, list_files(path="backend/static"))
     return FileResponse(path=path)
     
 
@@ -46,7 +46,7 @@ def best_match(query: str, choices: List):
     print(choices)
     res = process.extract(query, choices, scorer=fuzz.WRatio, limit=1)
     print(res)
-    return res
+    return res[0][0]
 
 def list_files(path: str):
     from os import listdir
