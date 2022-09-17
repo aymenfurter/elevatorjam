@@ -32,5 +32,5 @@ async def get_song_for(elevatorId: str):
     try:
         song = random.sample(user.songs, k=1)
     except:
-        song = random.sample(["rock", "pop", "hiphop", "k-pop"])
+        song = random.sample(["rock", "pop", "hiphop", "k-pop"], k=1)
     return song
