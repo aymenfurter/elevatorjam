@@ -13,7 +13,14 @@
 
 @implementation ViewController
 
+- (void)viewDidAppear:(BOOL)animated {
+    // User enters the elevator, in the future, this is thriggered through bluetooth.
+    [self enterRoom];
+    
+}
+
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -49,6 +56,22 @@
     UIAlertAction* MyAlert = [UIAlertAction actionWithTitle:@"Cool" style:UIAlertActionStyleDefault handler:nil];
     [alertController addAction:MyAlert];
     [self presentViewController:alertController animated:YES completion:nil];
+    [self enterRoom];
+}
+
+- (void)enterRoom {
+    // User enters the elevator, in the future, this is thriggered through bluetooth.
+    NSString *url = @"http://20.203.140.107/enter?userId=";
+    url = [url stringByAppendingString:@"7deeea2f-3222-4dfb-82bb-bc445fa1f18f&elevatorId=one"];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:url]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    
+    NSURLResponse *response;
+    NSError *err;
+    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
+
 }
 
 - (IBAction)importSong:(id)sender {
