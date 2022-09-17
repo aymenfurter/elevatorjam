@@ -23,7 +23,7 @@ async def add_user(userId: str, music: str) -> str:
 
 @route.post("/enter")
 async def enters(userId: str, elevatorId: str):
-    if elevatorId in list(elevator for elevator in state.elevators):
+    if elevatorId in list(elevator.elevatorId for elevator in state.elevators):
         next(map(lambda x: x.users.append(userId) , [elevator for elevator in state.elevators if elevator.elevatorId == elevatorId]))
     else:
         state.elevators.append(Elevator(elevatorId=elevatorId, users=[userId]))
