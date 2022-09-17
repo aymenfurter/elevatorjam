@@ -7,10 +7,15 @@ import random
 
 route = APIRouter()
 
+
 @route.post("/user")
 async def add_user(userId: str, music: str) -> str:
+    
+    def change_song(user: User):
+        user.songs = [music]
+    
     if userId in list(user.uid for user in state.users):
-        next(map(lambda x: x.songs.append(music) , [user for user in state.users if user.uid == userId]))
+        next(map(change_song, [user for user in state.users if user.uid == userId]))
     else:
         state.users.append(User(uid=userId, songs =[music]))
     print(state.users)
