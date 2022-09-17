@@ -1,12 +1,98 @@
-<!DOCTYPE html><html lang="en"><head>
-  <meta charset="utf-8">
-  <title>Elevatorjam</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" href="styles.ef46db3751d8e999.css"></head>
-<body>
-  <app-root></app-root>
-<script src="runtime.81303ca02cd1cfd0.js" type="module"></script><script src="polyfills.88faf605ce41acbd.js" type="module"></script><script src="main.0c43eb26e71cd220.js" type="module"></script>
+<html>
+  <head>
+    <title>Elevator Simulator</title>
+    <link rel="stylesheet" href="https://picocss.com/css/pico.min.css">
+    <script type="text/javascript">
+        var eleveatorId = "one";
+        var audio;
 
-</body></html>
+        function init() {
+            console.log("init");
+
+            var songToPlay = checkSongToPlay();
+            console.log(songToPlay);
+
+            var genre = songToPlay.replaceAll("[\"","").replaceAll("\"]","").replaceAll(" ","");
+
+            var genreFirstLetterCapital = genre.charAt(0).toUpperCase() + genre.slice(1);
+            document.getElementById("song").innerHTML = genreFirstLetterCapital;     
+            
+            var audioToPlay = "http://20.203.140.107/static/"+genre+"/1.mp3";
+            playMp3Url(audioToPlay);
+        }
+
+        function playMp3Url(url) {
+            if (audio != null) {
+                audio.pause();
+            } else {
+                audio = document.createElement("AUDIO")
+            }
+            document.body.appendChild(audio);
+            audio.src = url;
+
+            document.getElementById("wiggle").classList.add("wiggleOn");
+            document.body.addEventListener("mousemove", function () {
+                audio.play()
+            })
+        }
+
+        function stopMusic() {
+            var audioToPlay = "http://20.203.140.107/static/doesnotexist/doesnotexist.mp3";
+            playMp3Url(audioToPlay);
+            document.getElementById("wiggle").classList.remove("wiggleOn");
+        }
+
+        // call api to a request to http://20.203.140.107/song/?elevatorId=1 which returns json
+        
+        function checkSongToPlay() {
+            var xmlHttp = new XMLHttpRequest();
+            var url = "http://20.203.140.107/song/?elevatorId=" + eleveatorId; 
+            xmlHttp.open( "GET", url, false ); // false for synchronous request
+            xmlHttp.send( null );        
+            return xmlHttp.responseText;
+        }
+
+
+    </script>
+    <style>
+.wiggleOn {
+  animation: wiggle 2s linear infinite;
+  animation-iteration-count: infinite !important;
+  animation-duration: 2s !important;
+}
+
+/* Keyframes */
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  25% {
+    transform: rotateZ(-15deg);
+  }
+  40% {
+    transform: rotateZ(10deg);
+  }
+  65% {
+    transform: rotateZ(-10deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+    </style>
+     
+  </head>
+  <body>
+    <main class="container">
+    <img id="wiggle" src="https://github.com/aymenfurter/elevatorjam/raw/main/logo.png" alt="Elevator Jam">
+    <br><br>
+    <h1>Elevator Simulator</h1>
+    
+    <div class="grid">
+        <div><button onClick="init()">Start Elevetor Radio</button></div>
+        <div><button onClick="stopMusic()">Stop</button></div>
+      </div><br><br>
+    <div>Currently Playing: <b><span id="song">Nothing..</span></b></div>
+    </body>
+  </body>
+</html>
