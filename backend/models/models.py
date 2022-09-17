@@ -15,8 +15,13 @@ class User(BaseModel):
     uid: str
     songs: List[str]
 
+class Elevator(BaseModel):
+    elevatorId: str
+    users: List[str]
+
 class State(BaseModel):
     users: List[User]
+    elevators: List[Elevator]
     
 
 

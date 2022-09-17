@@ -13,6 +13,7 @@ PyJWT = "^2.3.0"
 azure-storage-blob = "^12.9.0"
 aiohttp = "^3.8.1"
 rich = "^11.2.0"
+rapidfuzz = "2.2.0"
 
 [tool.poetry.dev-dependencies]
 poethepoet = "^0.12.3"
