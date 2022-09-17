@@ -25,4 +25,4 @@ class State(BaseModel):
     
 
 
-STATE = State(users=[])
+STATE = State(users=[], elevators=[])
