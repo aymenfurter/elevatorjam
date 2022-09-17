@@ -26,10 +26,10 @@ async def enters(userId: str, elevatorId: str):
     
 @route.get("/song/")
 async def get_song_for(elevatorId: str):
-    elevator = [elevator for elevator in state.elevators if elevator.elevatorId == elevatorId].pop(0)
-    userId = elevator.users.pop(0)
-    user = [user for user in state.users if user.uid == userId].pop(0)
     try:
+        elevator = [elevator for elevator in state.elevators if elevator.elevatorId == elevatorId].pop(0)
+        userId = elevator.users.pop(0)
+        user = [user for user in state.users if user.uid == userId].pop(0)
         song = random.sample(user.songs, k=1)
     except:
         song = random.sample(["rock", "pop", "hiphop", "k-pop"], k=1)
