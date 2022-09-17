@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "elevatorjam"
+version = "0.1.0"
+description = ""
+authors = ["abbas jafari <abbas.jafari@powercoders.org>",
+            "Aymen Furter <aymen.furter@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.73.0"
+uvicorn = { extras = ["standard"], version = "^0.17.4" }
+PyJWT = "^2.3.0"
+azure-storage-blob = "^12.9.0"
+aiohttp = "^3.8.1"
+rich = "^11.2.0"
+
+[tool.poetry.dev-dependencies]
+poethepoet = "^0.12.3"
+black = {version = "^22.1.0", allow-prereleases = true}
+
+
+
+[tool.poe.tasks]
+test   = "pytest --cov=poethepoet"
+docs  = { script = "my_app.service:run(debug=True)" }
+serve = { shell = "uvicorn backend.main:app --reload"}
+build = { shell = "watch -n 5 $(cd frontend && ng build)"}
+serve-f = { shell = "cd frontend && ng serve"}
