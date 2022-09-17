@@ -12,11 +12,12 @@ class Song(BaseModel):
     theme: str
 
 class User(BaseModel):
-    _id: str
-    songs: List[Song]
+    uid: str
+    songs: List[str]
 
 class State(BaseModel):
     users: List[User]
+    
 
 
 STATE = State(users=[])
