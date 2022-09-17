@@ -25,6 +25,7 @@ test   = "pytest --cov=poethepoet"
 docs  = { script = "my_app.service:run(debug=True)" }
 serve = { shell = "uvicorn backend.main:app --reload"}
 ser = {shell = "uvicorn backend.main:app --reload --port 80 --host 0.0.0.0"}
+# run sudo $(which uvicorn) backend.main:app --reload --port 80 --host 0.0.0.0
 
 build = { shell = "watch -n 5 $(cd frontend && ng build)"}
 serve-f = { shell = "cd frontend && ng serve"}
