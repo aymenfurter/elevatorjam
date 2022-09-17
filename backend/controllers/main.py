@@ -3,10 +3,6 @@ from backend.models.models import User
 from backend.models.models import Elevator
 from backend.models.models import STATE as state
 import random
-from typing import List
-from rapidfuzz import process
-from rapidfuzz import fuzz
-from fastapi.responses import FileResponse
 
 
 route = APIRouter()
@@ -33,23 +29,5 @@ async def get_song_for(elevatorId: str):
     elevator = [elevator for elevator in state.elevators if elevator.elevatorId == elevatorId].pop(0)
     userId = elevator.users.pop(0)
     user = [user for user in state.users if user.uid == userId].pop(0)
-    song = random.sample(user.songs)
-    song = await get_file(song)
+    song = random.sample(user.songs, k=1)[0]
     return song
-
-async def get_file(filename: str):
-    path = best_match(filename, list_files(path="backend/static"))
-    return FileResponse(path=path)
-    
-
-def best_match(query: str, choices: List):
-    print(choices)
-    res = process.extract(query, choices, scorer=fuzz.WRatio, limit=1)
-    print(res)
-    return res[0][0]
-
-def list_files(path: str):
-    from os import listdir
-    from os.path import isfile, join
-    onlyfiles = [f for f in listdir(path) if isfile(join(path, f))]
-    return onlyfiles
