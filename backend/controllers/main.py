@@ -32,7 +32,7 @@ async def get_song_for(elevatorId: str):
         user = [user for user in state.users if user.uid == userId].pop(0)
         song = random.sample(user.songs, k=1)
     except:
-        song = random.sample(["rock", "pop", "hiphop", "k-pop"], k=1)
+        song = random.sample(["rock", "pop"], k=1)
     return song
 
 @route.get("/ping")
