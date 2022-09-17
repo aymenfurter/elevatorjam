@@ -36,7 +36,8 @@ async def get_song_for(elevatorId: str):
         userId = elevator.users.pop(0)
         user = [user for user in state.users if user.uid == userId].pop(0)
         song = random.sample(user.songs, k=1)
-    except:
+    except Exception as e:
+        print(e)
         song = random.sample(["rock", "pop"], k=1)
     return song
 
