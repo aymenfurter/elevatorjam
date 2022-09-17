@@ -26,7 +26,7 @@
         <!--View Controller-->
         <scene sceneID="vWj-ov-WOM">
             <objects>
-                <viewController id="qdP-NW-i6j" sceneMemberID="viewController">
+                <viewController id="qdP-NW-i6j" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wV9-fM-FEx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,6 +65,9 @@
                                     <fontDescription key="titleFontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="33"/>
                                     <color key="baseBackgroundColor" red="0.080553204350000004" green="0.44750136289999998" blue="0.49318498430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="popSelected:" destination="qdP-NW-i6j" eventType="primaryActionTriggered" id="UhC-6Q-maH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDS-mR-m9n">
                                 <rect key="frame" x="216" y="168" width="178" height="125"/>
@@ -74,6 +77,9 @@
                                     <fontDescription key="titleFontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="33"/>
                                     <color key="baseBackgroundColor" red="0.080553204350000004" green="0.44750136289999998" blue="0.49318498430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="rockSelected:" destination="qdP-NW-i6j" eventType="primaryActionTriggered" id="nUR-yn-maA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apv-Bv-jYW">
                                 <rect key="frame" x="20" y="305" width="178" height="125"/>
@@ -83,6 +89,9 @@
                                     <fontDescription key="titleFontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="33"/>
                                     <color key="baseBackgroundColor" red="0.080553204350000004" green="0.44750136289999998" blue="0.49318498430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="hipHopSelected:" destination="qdP-NW-i6j" eventType="primaryActionTriggered" id="ZhI-Dh-tF0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDw-f2-yhC">
                                 <rect key="frame" x="216" y="305" width="178" height="125"/>
@@ -92,6 +101,9 @@
                                     <fontDescription key="titleFontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="33"/>
                                     <color key="baseBackgroundColor" red="0.080553204350000004" green="0.44750136289999998" blue="0.49318498430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="edmSelected:" destination="qdP-NW-i6j" eventType="primaryActionTriggered" id="iBx-6i-dgJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yX-El-8ST">
                                 <rect key="frame" x="20" y="442" width="178" height="125"/>
@@ -101,6 +113,9 @@
                                     <fontDescription key="titleFontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="33"/>
                                     <color key="baseBackgroundColor" red="0.080553204350000004" green="0.44750136289999998" blue="0.49318498430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="rAndBselected:" destination="qdP-NW-i6j" eventType="primaryActionTriggered" id="iAa-Ky-PxO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIk-xN-uNw">
                                 <rect key="frame" x="216" y="442" width="178" height="125"/>
@@ -110,6 +125,9 @@
                                     <fontDescription key="titleFontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="33"/>
                                     <color key="baseBackgroundColor" red="0.080553204350000004" green="0.44750136289999998" blue="0.49318498430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="latinSelected:" destination="qdP-NW-i6j" eventType="primaryActionTriggered" id="RMo-X5-MzG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mb0-gl-evp">
                                 <rect key="frame" x="20" y="579" width="178" height="125"/>
@@ -119,6 +137,9 @@
                                     <fontDescription key="titleFontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="33"/>
                                     <color key="baseBackgroundColor" red="0.080553204350000004" green="0.44750136289999998" blue="0.49318498430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="kPopSelected:" destination="qdP-NW-i6j" eventType="primaryActionTriggered" id="AIl-Iq-4DU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7d-AI-FQd">
                                 <rect key="frame" x="20" y="810" width="182" height="63"/>
@@ -128,6 +149,9 @@
                                     <fontDescription key="titleFontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                     <color key="baseBackgroundColor" red="0.080553204350000004" green="0.44750136289999998" blue="0.49318498430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="importSong:" destination="qdP-NW-i6j" eventType="primaryActionTriggered" id="SJd-Ug-P2E"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EL9-2K-zA8">
                                 <rect key="frame" x="216" y="579" width="178" height="125"/>
@@ -137,6 +161,9 @@
                                     <fontDescription key="titleFontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="33"/>
                                     <color key="baseBackgroundColor" red="0.080553204350000004" green="0.44750136289999998" blue="0.49318498430000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="classicalSelected:" destination="qdP-NW-i6j" eventType="primaryActionTriggered" id="zmN-Sh-eCS"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🎤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tcx-gf-lNP">
                                 <rect key="frame" x="89" y="189" width="41" height="43"/>
