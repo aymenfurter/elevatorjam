@@ -34,3 +34,7 @@ async def get_song_for(elevatorId: str):
     except:
         song = random.sample(["rock", "pop", "hiphop", "k-pop"], k=1)
     return song
+
+@route.get("/ping")
+async def ping():
+    return "pong"
