@@ -4,3 +4,6 @@
 <h2>We're changing the way people think about elevator music </h2>
 <p>Let's face it: the world is a noisy place. No matter where you go, there's always some kind of background noise competing for your attention. That's why the world needs personalized elevator music. With <b>Elevator Jam</b>, you can tune out the rest of the world for a moment, while you use the elevator. </p>
 <img src="screen.png" width="350">
+
+<h2>How does it work?</h2>
+<img src="architecture.drawio.png">
